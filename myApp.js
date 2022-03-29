@@ -14,6 +14,23 @@ app.use( function middleware(req, res, next) {
 });
 
 
+
+app.get('/now', function(req, res, next) {
+  req.time = new Date().toString();  // Hypothetical synchronous operation
+  next();
+}, function(req, res) {
+  
+  res.send({
+    time: req.time
+  });
+  
+});
+
+
+
+
+
+
 app.get('/', function routeHandler(req, res) {
   // res.send('Hello Express');
   res.sendFile(__dirname + '/views/index.html');
