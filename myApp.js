@@ -1,8 +1,16 @@
 var express = require('express');
 var app = express();
+var bodyParser = require("body-parser");
+
+
 require('dotenv').config()
 
 app.use('/public', express.static(__dirname + "/public"))
+
+
+app.use( bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 
 
 app.use( function middleware(req, res, next) {
