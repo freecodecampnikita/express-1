@@ -9,6 +9,13 @@ app.get('/', function routeHandler(req, res) {
 
 });
 
+
+app.get('/json', function routeHandler(req, res) {
+  // res.send('Hello Express');
+  res.json({"message": "Hello json"});
+
+});
+
 console.log("Hello World");
 
 
