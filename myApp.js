@@ -31,7 +31,7 @@ app.post("/name", function(req, res) {
 });
 
 
-app.post("/name", function(req, res) {
+app.get("/name", function(req, res) {
   var firstName = req.query.first;
   var lastName = req.query.last;
   // Use template literals to form a formatted string
